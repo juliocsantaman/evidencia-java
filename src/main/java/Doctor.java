@@ -12,6 +12,6 @@ public class Doctor {
     // Atributos.
     private int id;
     private String nombre;
-    private int especialidad;
+    private String especialidad;
     
 }
