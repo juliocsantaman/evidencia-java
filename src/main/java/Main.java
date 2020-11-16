@@ -10,10 +10,11 @@
  */
 public class Main {
     public static void main(String[] args) {
-        Conector conexion = new Conector();
-        
-        conexion.conectar();
-        conexion.cerrar();
+
+        Doctor doc1 = new Doctor();
+        doc1.darAltaDoctor("Francisco", "Urología");
+
+
     }
     
 }
