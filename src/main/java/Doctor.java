@@ -1,7 +1,6 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.PreparedStatement;
 import java.sql.Statement;
 
 /*
@@ -20,6 +19,8 @@ public class Doctor {
     private String especialidad;
     private Connection conexion;
     
+    // Métodos.
+    // Método que da de alta a un doctor con su nombre y especialidad.
     public void darAltaDoctor(String nombre, String especialidad) {
         try {
             // Establecer conexión.
@@ -36,6 +37,8 @@ public class Doctor {
             
             // Insertar datos.
             enunciado.execute("INSERT INTO Doctores (nombre, especialidad) VALUES('"+nombre+"','"+especialidad+"');'");
+            
+            System.out.println("Se ha registrado un doctor correctamente.");
             
         } catch (Exception e) {
             System.err.println(e.getMessage());
