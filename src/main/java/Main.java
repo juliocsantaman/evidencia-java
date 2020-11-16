@@ -11,9 +11,9 @@
 public class Main {
 
     public static void main(String[] args) {
-        Cita c1 = new Cita();
+        RelacionInformacion relacion = new RelacionInformacion();
         
-        c1.crearCita("17/11/2020", "5pm", "Dolor de cabeza y fiebre");
+        relacion.relacionarInformacion(1, 1, 1);
     }
 
 }
