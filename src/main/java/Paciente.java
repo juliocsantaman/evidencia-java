@@ -17,7 +17,9 @@ public class Paciente {
     // Atributos.
     private String nombre;
     private Connection conexion;
-
+    
+    // Métodos.
+    // Método que da de alta a un paciente con su nombre.
     public void darAltaPaciente(String nombre) {
         try {
             // Establecer conexión.
