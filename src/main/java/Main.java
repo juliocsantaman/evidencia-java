@@ -10,7 +10,11 @@
  */
 public class Main {
     public static void main(String[] args) {
-        
+
+        Doctor doc1 = new Doctor();
+        doc1.darAltaDoctor("Francisco", "Urología");
+
+
     }
     
 }

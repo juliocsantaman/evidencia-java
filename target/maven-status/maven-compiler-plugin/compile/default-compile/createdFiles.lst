@@ -1,0 +1,11 @@
+Conector.class
+Main.class
+RelacionInformacion.class
+Paciente.class
+<<<<<<< HEAD
+Cita.class
+Doctor.class
+=======
+Doctor.class
+Cita.class
+>>>>>>> alta_doctores
