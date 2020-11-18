@@ -22,6 +22,9 @@ public class Main {
         System.out.println("2. Dar de alta pacientes.");
         System.out.println("3. Crear una cita con fecha, hora y motivo.");
         System.out.println("4. Relacionar una cita con un doctor y un paciente.");
+        System.out.println("5. Mostrar lista de doctores.");
+        System.out.println("6. Mostrar lista de pacientes.");
+        System.out.println("7. Mostrar lista de citas.");
         System.out.println("0. Salir.");
         System.out.println("Elige una opción: ");
         opcion = scanner.next();
@@ -49,6 +52,11 @@ public class Main {
                 RelacionInformacion relacion = new RelacionInformacion();
                 relacion.pedirDatos();
                 relacion.relacionarInformacion();
+                break;
+                
+            case "5":
+                doctor = new Doctor();
+                doctor.mostrarDoctores();
                 break;
                 
             case "0":
