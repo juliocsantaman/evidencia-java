@@ -46,6 +46,9 @@ public class Main {
                 break;
                 
             case "4":
+                RelacionInformacion relacion = new RelacionInformacion();
+                relacion.pedirDatos();
+                relacion.relacionarInformacion();
                 break;
                 
             case "0":
