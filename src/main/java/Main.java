@@ -34,6 +34,9 @@ public class Main {
                 break;
                 
             case "2":
+                Paciente paciente = new Paciente();
+                paciente.pedirDatos();
+                paciente.darAltaPaciente();
                 break;
                 
             case "3":

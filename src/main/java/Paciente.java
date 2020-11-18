@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -17,10 +18,18 @@ public class Paciente {
     // Atributos.
     private String nombre;
     private Connection conexion;
+    private Scanner scanner = new Scanner(System.in);
     
     // Métodos.
+    
+    // Método para pedir los datos.
+    public void pedirDatos() {
+        System.out.println("Ingresa el nombre del paciente: ");
+        this.nombre = scanner.next();
+    }
+    
     // Método que da de alta a un paciente con su nombre.
-    public void darAltaPaciente(String nombre) {
+    public void darAltaPaciente() {
         try {
             // Establecer conexión.
             Class.forName("org.sqlite.JDBC");
@@ -35,7 +44,7 @@ public class Paciente {
             enunciado = conexion.createStatement();
 
             // Insertar datos.
-            enunciado.execute("INSERT INTO Pacientes (nombre) VALUES('" + nombre + "');'");
+            enunciado.execute("INSERT INTO Pacientes (nombre) VALUES('" + this.nombre + "');'");
             
             System.out.println("Se ha registrado un paciente correctamente.");
 
