@@ -25,9 +25,9 @@ public class Doctor {
     // Método para pedir los datos.
     public void pedirDatos() {
         System.out.println("Ingresa el nombre del doctor: ");
-        this.nombre = scanner.next();
+        this.nombre = scanner.nextLine();
         System.out.println("Ingresa la especialidad del doctor: ");
-        this.especialidad = scanner.next();
+        this.especialidad = scanner.nextLine();
     }
     
     // Método que da de alta a un doctor con su nombre y especialidad.
