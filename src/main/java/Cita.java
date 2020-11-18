@@ -1,6 +1,8 @@
 
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.Scanner;
 
@@ -58,5 +60,43 @@ public class Cita {
             System.err.println(e.getMessage());
         }
     }
+    
+    // Método que muestra la lista de citas.
+    public void mostrarCitas() {
+        ResultSet resultado = null;
+        
+        try {
+            // Establecer conexión.
+            Class.forName("org.sqlite.JDBC");
+            conexion = DriverManager.getConnection("jdbc:sqlite:db/administracion_citas.db");
+            
+            if(conexion != null) {
+                System.out.println("Conectado.");
+            }
+            
+            PreparedStatement query = conexion.prepareStatement("SELECT * FROM Citas");
+            
+            resultado = query.executeQuery();
+            
+            while(resultado.next()) {
+                System.out.print("ID: ");
+                System.out.println(resultado.getInt("id"));
+                
+                System.out.print("Fecha: ");
+                System.out.println(resultado.getString("fecha"));
+                
+                System.out.print("Hora: ");
+                System.out.println(resultado.getString("hora"));
+                
+                System.out.print("Motivo de la cita: ");
+                System.out.println(resultado.getString("motivo_cita"));
+                
+                System.out.println("==========");
+            }
+        } catch (Exception e) {
+            System.err.println(e.getMessage());
+        }
+    }
+    
 
 }

@@ -25,6 +25,7 @@ public class Main {
         System.out.println("5. Mostrar lista de doctores.");
         System.out.println("6. Mostrar lista de pacientes.");
         System.out.println("7. Mostrar lista de citas.");
+        System.out.println("8. Mostrar la información relacionada (doctor, paciente, cita).");
         System.out.println("0. Salir.");
         System.out.println("Elige una opción: ");
         opcion = scanner.next();
@@ -57,6 +58,20 @@ public class Main {
             case "5":
                 doctor = new Doctor();
                 doctor.mostrarDoctores();
+                break;
+                
+            case "6":
+                paciente = new Paciente();
+                paciente.mostrarPacientes();
+                break;
+                
+            case "7":
+                cita = new Cita();
+                cita.mostrarCitas();
+                break;
+                
+            case "9":
+                relacion = new RelacionInformacion();
                 break;
                 
             case "0":
