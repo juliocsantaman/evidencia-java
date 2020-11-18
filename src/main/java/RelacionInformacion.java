@@ -61,7 +61,7 @@ public class RelacionInformacion {
         }
     }
     
-    // Método que muestra la lista de doctores.
+    // Método que muestra la información relacionada (doctor, paciente, cita).
     public void mostrarRelacionesInformacion() {
         ResultSet resultado = null;
         
@@ -74,21 +74,45 @@ public class RelacionInformacion {
                 System.out.println("Conectado.");
             }
             
-            PreparedStatement query = conexion.prepareStatement("SELECT * FROM Doctores");
+            PreparedStatement query = conexion.prepareStatement("SELECT Doctores.*, Pacientes.*, Citas.* FROM RelacionInformacion INNER JOIN Doctores "
+                    + "ON RelacionInformacion.idDoctor = Doctores.id "
+                    + "INNER JOIN Pacientes ON RelacionInformacion.idPaciente = Pacientes.id "
+                    + "INNER JOIN Citas ON RelacionInformacion.idCita = Citas.id");
             
             resultado = query.executeQuery();
             
             while(resultado.next()) {
-                System.out.print("ID: ");
-                System.out.println(resultado.getInt("id"));
+                // Datos del doctor.
+                System.out.println("***** DATOS DEL DOCTOR *****");
+                System.out.print("ID del doctor: ");
+                System.out.println(resultado.getString(1));
+                System.out.print("Nombre del doctor: ");
+                System.out.println(resultado.getString(2));
+                System.out.print("Especialidad del doctor: ");
+                System.out.println(resultado.getString(3));
+                System.out.println();
                 
-                System.out.print("Nombre: ");
-                System.out.println(resultado.getString("nombre"));
+                // Datos del paciente.
+                System.out.println("***** DATOS DEL PACIENTE *****");
+                System.out.print("ID del paciente: ");
+                System.out.println(resultado.getString(4));
+                System.out.print("Nombre del paciente: ");
+                System.out.println(resultado.getString(5));
+                System.out.println();
                 
-                System.out.print("Especialidad: ");
-                System.out.println(resultado.getString("especialidad"));
-                
+                // Datos de la cita.
+                System.out.println("***** DATOS DE LA CITA *****");
+                System.out.print("ID de la cita: ");
+                System.out.println(resultado.getString(6));
+                System.out.print("Fecha de la cita: ");
+                System.out.println(resultado.getString(7));
+                System.out.print("Hora de la cita: ");
+                System.out.println(resultado.getString(8));
+                System.out.print("Motivo de la cita: ");
+                System.out.println(resultado.getString(9));
+               
                 System.out.println("==========");
+                System.out.println();
             }
         } catch (Exception e) {
             System.err.println(e.getMessage());

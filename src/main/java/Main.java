@@ -70,8 +70,9 @@ public class Main {
                 cita.mostrarCitas();
                 break;
                 
-            case "9":
+            case "8":
                 relacion = new RelacionInformacion();
+                relacion.mostrarRelacionesInformacion();
                 break;
                 
             case "0":
