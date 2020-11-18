@@ -40,6 +40,9 @@ public class Main {
                 break;
                 
             case "3":
+                Cita cita = new Cita();
+                cita.pedirDatos();
+                cita.crearCita();
                 break;
                 
             case "4":

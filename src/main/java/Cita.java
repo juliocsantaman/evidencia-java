@@ -2,6 +2,7 @@
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.Statement;
+import java.util.Scanner;
 
 /*
  * To change this license header, choose License Headers in Project Properties.
@@ -19,10 +20,22 @@ public class Cita {
     private String hora;
     private String motivoCita;
     private Connection conexion;
+    private Scanner scanner = new Scanner(System.in);
 
     // Métodos.
+    
+    // Método para pedir los datos.
+    public void pedirDatos() {
+        System.out.println("Ingresa la fecha de la cita formato(dd/mm/yyyy): ");
+        this.fecha = scanner.nextLine();
+        System.out.println("Ingresa la hora de la cita: ");
+        this.hora = scanner.nextLine();
+        System.out.println("Ingresa el motivo de la cita: ");
+        this.motivoCita = scanner.nextLine();
+    }
+    
     // Método que da de alta una cita con fecha, hora y motivo.
-    public void crearCita(String fecha, String hora, String motivo_citas) {
+    public void crearCita() {
         try {
             // Establecer conexión.
             Class.forName("org.sqlite.JDBC");
@@ -37,7 +50,7 @@ public class Cita {
             enunciado = conexion.createStatement();
 
             // Insertar datos.
-            enunciado.execute("INSERT INTO Citas (fecha, hora, motivo_cita) VALUES('" + fecha + "','" + hora + "','" + motivo_citas + "');'");
+            enunciado.execute("INSERT INTO Citas (fecha, hora, motivo_cita) VALUES('" + this.fecha + "','" + this.hora + "','" + this.motivoCita + "');'");
 
             System.out.println("Se ha registrado una cita correctamente.");
 
