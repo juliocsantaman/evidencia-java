@@ -52,6 +52,8 @@ public class Main {
                 break;
                 
             case "0":
+                System.out.println("Aplicación finalizada.");
+                System.exit(0);
                 break;
                 
         }
