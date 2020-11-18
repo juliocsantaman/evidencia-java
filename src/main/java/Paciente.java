@@ -25,7 +25,7 @@ public class Paciente {
     // Método para pedir los datos.
     public void pedirDatos() {
         System.out.println("Ingresa el nombre del paciente: ");
-        this.nombre = scanner.next();
+        this.nombre = scanner.nextLine();
     }
     
     // Método que da de alta a un paciente con su nombre.
