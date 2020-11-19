@@ -52,6 +52,9 @@ public class Doctor {
             
             System.out.println("Se ha registrado un doctor correctamente.");
             
+            enunciado.close();
+            conexion.close();
+            
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
@@ -86,6 +89,10 @@ public class Doctor {
                 
                 System.out.println("==========");
             }
+            
+            query.close();
+            conexion.close();
+            
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

@@ -49,6 +49,9 @@ public class Paciente {
             enunciado.execute("INSERT INTO Pacientes (nombre) VALUES('" + this.nombre + "');'");
             
             System.out.println("Se ha registrado un paciente correctamente.");
+            
+            enunciado.close();
+            conexion.close();
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -81,6 +84,10 @@ public class Paciente {
                                 
                 System.out.println("==========");
             }
+            
+            query.close();
+            conexion.close();
+            
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

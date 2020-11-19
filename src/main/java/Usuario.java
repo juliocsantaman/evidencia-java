@@ -42,6 +42,9 @@ public class Usuario {
             resultado = query.executeQuery();
             this.user = resultado.getString("user");
             this.password = resultado.getString("password");
+            
+            query.close();
+            conexion.close();
                 
         } catch (Exception e) {
             System.err.println(e.getMessage());

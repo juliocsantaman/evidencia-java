@@ -55,6 +55,9 @@ public class RelacionInformacion {
             enunciado.execute("INSERT INTO RelacionInformacion (idDoctor, idPaciente, idCita) VALUES('" + this.idDoctor + "','" + this.idPaciente + "','" + this.idCita + "');'");
 
             System.out.println("Se ha relacionado la información correctamente.");
+            
+            enunciado.close();
+            conexion.close();
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -114,6 +117,10 @@ public class RelacionInformacion {
                 System.out.println("==========");
                 System.out.println();
             }
+            
+            query.close();
+            conexion.close();
+            
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }

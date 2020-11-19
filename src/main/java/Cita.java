@@ -55,6 +55,9 @@ public class Cita {
             enunciado.execute("INSERT INTO Citas (fecha, hora, motivo_cita) VALUES('" + this.fecha + "','" + this.hora + "','" + this.motivoCita + "');'");
 
             System.out.println("Se ha registrado una cita correctamente.");
+            
+            conexion.close();
+            enunciado.close();
 
         } catch (Exception e) {
             System.err.println(e.getMessage());
@@ -93,6 +96,10 @@ public class Cita {
                 
                 System.out.println("==========");
             }
+            
+            conexion.close();
+            query.close();
+            
         } catch (Exception e) {
             System.err.println(e.getMessage());
         }
